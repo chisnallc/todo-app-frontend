@@ -1,11 +1,12 @@
-import React from 'react';
+mport React from 'react';
 
-class Task extends React.Component {
+ class Task extends React.Component {
 
-    render() {
+     render() {
         return (
-            <div className="row" style={look.taskRow}>
+            <div className="row" style={styles.taskRow}>
                 <div className="col">
+                    {this.props.taskDescription}
                 </div>
                 <div className="col">
                     <input type="button" value="Delete" />
@@ -14,26 +15,16 @@ class Task extends React.Component {
                     <input type="button" value="Done" />
                 </div>
             </div>
-
-
-
-
-
         );
     }
 
+ }
 
-}
-
-const look = {
-
-
+ const styles = {
     taskRow: {
-        paddingTop: "15px",
-        paddingBottom: "15px",
-        color: "blue"
+        paddingTop: "10px",
+        paddingBottom: "10px"
     }
 }
 
-
-export default Task;
+ export default Task;
