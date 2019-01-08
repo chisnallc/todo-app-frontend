@@ -1,13 +1,34 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
-import TaskList from './components/TaskList';
+import Header from './Components/Header';
+import TaskEntry from './Components/TaskEntry';
+import TaskList from './Components/TaskList';
 
 class App extends Component {
+  
+  constructor(props){
+    super(props);
+
+    this.state = {
+      tasks: []
+    };
+
+    this.addTask = this.addTask.bind(this);
+  }
+  
+  addTask(task){
+    let currentListOfTasks = this.state.tasks;
+    currentListOfTasks.push(task);
+    this.setState({
+     tasks:currentListOfTasks 
+    });
+  }
+
   render() {
     return (
       <div className="container">
         <Header />
-        <TaskList />
+        <TaskEntry onSaveTaskHandler={this.addTask} />
+        <TaskList tasks={this.state.tasks}/>
       </div>
     );
   }
