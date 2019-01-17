@@ -2,26 +2,40 @@ import React from 'react';
 
 
 class Task extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.deleteTask = this.deleteTask.bind(this);
+        
+
+        
+    }
+deleteTask(){
+    alert('Taking away task');
+}
+
 
     render() {
+
         return (
-            <div className="row" style={styles.taskRow}>
+            <div className="row" style={styles.taskRow} >
                 <div className="col" style={styles.taskDescription}>
                     {this.props.taskDescription}
                 </div>
                 <div className="col" >
-                    <input type="button" class= "btn btn-outline-success" value="Delete"style={styles.buttonStyle}  />
+                    <input type="button" class="btn btn-outline-success" value="Delete" style={styles.buttonStyle} />
                     {this.props.buttonStyle}
                 </div>
                 <div className="col">
-                    <input type="button" class= "btn btn-outline-success" value="Done" style={styles.buttonStyle} />
-                    {this.props.buttonStyle}  
+                    <input type="button" class="btn btn-outline-success" value="Done" style={styles.buttonStyle} onClick={this.deleteTask}/>
+                    {this.props.buttonStyle}
                 </div>
             </div>
         );
     }
-    
 }
+
+
 
 const styles = {
     taskRow: {
@@ -36,7 +50,8 @@ const styles = {
 
     },
     buttonStyle: {
-        color: "brown"
+        color: "brown",
+        fontWeight: "bold"
     }
 }
 
