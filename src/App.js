@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './Components/Header';
 import TaskEntry from './Components/TaskEntry';
 import TaskList from './Components/TaskList';
-import './App.css';
+
 
 class App extends Component {
   
