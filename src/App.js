@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import Header from './Components/Header';
 import TaskEntry from './Components/TaskEntry';
 import TaskList from './Components/TaskList';
+import taskCount from './Components/taskCount';
 
 
 class App extends Component {
-  
-  constructor(props){
+
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -14,25 +15,39 @@ class App extends Component {
     };
 
     this.addTask = this.addTask.bind(this);
+
+
+
   }
-  
-  addTask(task){
+
+  addTask(task) {
     let currentListOfTasks = this.state.tasks;
     currentListOfTasks.push(task);
     this.setState({
-     tasks:currentListOfTasks 
+      tasks: currentListOfTasks
     });
   }
 
   render() {
     return (
       <div className="container">
-        <Header />
+        <div className="row" center>
+          <Header />
+        </div>
+        <div className="centre">
+        </div>
         <TaskEntry onSaveTaskHandler={this.addTask} />
-        <TaskList tasks={this.state.tasks}/>
       </div>
-    );
-  }
+
+      <div className="row">
+        <taskCount tasks={this.state.tasks} />
+      </div>
+      <TaskList tasks={this.state.tasks} />
+        <div/>
+
+          );
+          }
 }
+
 
 export default App;
