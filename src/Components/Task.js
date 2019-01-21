@@ -23,7 +23,7 @@ deleteTask(){
                     {this.props.taskDescription}
                 </div>
                 <div className="col" >
-                    <input type="button" class="btn btn-outline-success" value="Delete" style={styles.buttonStyle} />
+                    <input type="button" class="btn btn-outline-success" value="Delete" style={styles.buttonStyle}onClick={this.deleteTask} />
                     {this.props.buttonStyle}
                 </div>
                 <div className="col">
@@ -39,8 +39,8 @@ deleteTask(){
 
 const styles = {
     taskRow: {
-        paddingTop: "10px",
-        paddingBottom: "10px"
+        paddingTop: "50px",
+        paddingBottom: "50px"
     },
     taskDescription: {
         fontFamily: "Monospace",
@@ -50,7 +50,7 @@ const styles = {
 
     },
     buttonStyle: {
-        color: "brown",
+        color: "black",
         fontWeight: "bold"
     }
 }
