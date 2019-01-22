@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './Components/Header';
 import TaskEntry from './Components/TaskEntry';
 import TaskList from './Components/TaskList';
-import taskCount from './Components/taskCount';
+import TaskCount from './Components/TaskCount';
 
 
 class App extends Component {
@@ -31,23 +31,33 @@ class App extends Component {
   render() {
     return (
       <div className="container">
+
         <div className="row" center>
           <Header />
         </div>
-        <div className="centre">
+
+        <div className="center">
+          <TaskEntry onSaveTaskHandler={this.addTask} />
         </div>
-        <TaskEntry onSaveTaskHandler={this.addTask} />
+
+        <div>
+          <taskCount tasks={this.state.tasks} />
+
+        </div>
+
+        <div>
+          <TaskList tasks={this.state.tasks} />
+        </div>
+        
       </div>
 
-      <div className="row">
-        <taskCount tasks={this.state.tasks} />
-      </div>
-      <TaskList tasks={this.state.tasks} />
-        <div/>
+    );
 
-          );
-          }
+  }
 }
+
+
+
 
 
 export default App;
