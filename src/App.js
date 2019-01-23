@@ -41,7 +41,7 @@ class App extends Component {
         </div>
 
         <div>
-          <taskCount tasks={this.state.tasks} />
+          <TaskCount tasks={this.state.tasks} />
 
         </div>
 
