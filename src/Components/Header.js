@@ -2,17 +2,19 @@ import React from 'react';
 class Header extends React.Component {
 
     render() {
-              return (<h1 style={styles.header}> Recipes To Make in 10 Days</h1>);
+              return (<h1 style={styles.header}> Recipe List For This Week</h1>);
     }
 }
 
 
 const styles = {
     header : {
-        color: "#EA172A",
+        color: 'red',
         textAlign: 'center',
-        fontSize: '60px'
-        
+        fontSize: '60px',
+        fontFamily: 'Quicksand'
+
+
     }
 };
 
