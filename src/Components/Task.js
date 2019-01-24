@@ -6,6 +6,7 @@ class Task extends React.Component {
         super(props);
 
         this.deleteTask = this.deleteTask.bind(this);
+
         
 
         
@@ -27,7 +28,7 @@ deleteTask(){
                     {this.props.buttonStyle}
                 </div>
                 <div className="col">
-                    <input type="button" class="btn btn-outline-success" value="Done" style={styles.buttonStyle} onClick={this.deleteTask}/>
+                    <input type="button" class="btn btn-outline-success" value="Done" style={styles.buttonStyle} />
                     {this.props.buttonStyle}
                 </div>
             </div>
