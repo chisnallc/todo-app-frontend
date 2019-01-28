@@ -12,7 +12,7 @@ class Task extends React.Component {
         
     }
 deleteTask(){
-    alert('Taking away task:' + this.props.taskDescription);
+   this.props.onDeleteTaskHandler(this.props.taskId);
 }
 
 
@@ -24,9 +24,8 @@ deleteTask(){
                     {this.props.taskDescription}
                 </div>
                 <div className="col" >
-                    <input type="button" class="btn btn-outline-success" value="Delete" style={styles.buttonStyle} onClick={this.deleteTask} />
+                    <input type="button" class="btn btn-outline-success" value="Delete" style={styles.buttonStyle}onClick={this.deleteTask} />
                     {this.props.buttonStyle}
-                    
                 </div>
                 <div className="col">
                     <input type="button" class="btn btn-outline-success" value="Done" style={styles.buttonStyle} />
