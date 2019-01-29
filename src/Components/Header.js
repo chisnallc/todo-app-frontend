@@ -2,7 +2,7 @@ import React from 'react';
 class Header extends React.Component {
 
     render() {
-              return (<h1 style={styles.header}> Recipe List For This Week</h1>);
+              return (<h1 style={styles.header}> Shopping List For Dinner  </h1>);
     }
 }
 
@@ -12,7 +12,7 @@ const styles = {
         color: 'red',
         textAlign: 'center',
         fontSize: '60px',
-        fontFamily: 'Quicksand'
+        fontFamily: 'Gautami'
 
 
     }
