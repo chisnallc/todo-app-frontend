@@ -5,6 +5,7 @@ import TaskList from './Components/TaskList';
 import TaskCount from './Components/TaskCounter';
 
 
+
 class App extends Component {
 
   constructor(props) {
@@ -16,6 +17,7 @@ class App extends Component {
 
     this.addTask = this.addTask.bind(this);
     this.deleteTask = this.deleteTask.bind(this);
+    this.removeDone = this.removeDone.bind(this);
 
 
   }
@@ -34,7 +36,9 @@ class App extends Component {
     let deleteFilter = currentListOfTasks.filter((task) => task.id !== taskId);
     this.setState({tasks: deleteFilter});
   }
-
+removeDone() {
+  alert('done');
+}
 
   render() {
     return (
@@ -56,6 +60,9 @@ class App extends Component {
         <div>
           <TaskList tasks={this.state.tasks} onDeleteTaskHandler ={this.deleteTask} />
         </div>
+        
+         
+         
         
       </div>
 

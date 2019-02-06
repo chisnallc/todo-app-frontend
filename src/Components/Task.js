@@ -6,6 +6,7 @@ class Task extends React.Component {
         super(props);
 
         this.deleteTask = this.deleteTask.bind(this);
+        this.removeDone =this.removeDone.bind(this);
 
         
 
@@ -15,7 +16,10 @@ deleteTask(){
    this.props.onDeleteTaskHandler(this.props.taskId);
 }
 
+removeDone(){
+    this.props.onDoneTaskHandler(this.props.taskId);
 
+}
     render() {
 
         return (
@@ -28,7 +32,7 @@ deleteTask(){
                     {this.props.buttonStyle}
                 </div>
                 <div className="col">
-                    <input type="button" class="btn btn-outline-success" value="Done" style={styles.buttonStyle} />
+                    <input type="button" class="btn btn-outline-success" value="Done" style={styles.buttonStyle}onClick={this.removeDone} />
                     {this.props.buttonStyle}
                 </div>
             </div>

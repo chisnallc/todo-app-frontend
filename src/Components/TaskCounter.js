@@ -23,6 +23,7 @@ const styles = {
     taskCount: {
 
         font: "40px",
+        fontWeight: "bold",
          
     },
 }
