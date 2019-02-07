@@ -36,9 +36,15 @@ class App extends Component {
     let deleteFilter = currentListOfTasks.filter((task) => task.id !== taskId);
     this.setState({tasks: deleteFilter});
   }
-removeDone() {
-  alert('done');
+
+  /// I will use .filter to work through the array and filter out the task that pass the filter test within the function.I will use.filter.
+removeDone(taskId) {
+  let currentListOfTasks = this.state.tasks;
+    let deleteFilter = currentListOfTasks.filter((task) => task.id === taskId)[0];
+  deleteFilter.completed = true;
+  this.setState({tasks:currentListOfTasks});
 }
+    
 
   render() {
     return (

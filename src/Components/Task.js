@@ -21,10 +21,13 @@ removeDone(){
 
 }
     render() {
-
+let taskStyle = styles.taskDescription;
+if (this.props.taskStatus){
+    taskStyle=styles.taskDescriptionCompleted;
+}
         return (
             <div className="row" style={styles.taskRow} >
-                <div className="col" style={styles.taskDescription}>
+                <div className="col" style={taskStyle}>
                     {this.props.taskDescription}
                 </div>
                 <div className="col" >
@@ -52,6 +55,15 @@ const styles = {
         fontWeight: "bold",
         color: "brown",
         fontSize: "20px"
+
+    },
+
+    taskDescriptionCompleted: {
+        fontFamily: "Monospace",
+        fontWeight: "bold",
+        color: "brown",
+        fontSize: "20px",
+        textDecoration: "line-through"
 
     },
     buttonStyle: {
