@@ -58,8 +58,10 @@ removeDone() {
         </div>
 
         <div>
-          <TaskList tasks={this.state.tasks} onDeleteTaskHandler ={this.deleteTask} />
+          <TaskList tasks={this.state.tasks} onDeleteTaskHandler ={this.deleteTask}  onDoneTaskHandler ={this.removeDone}/>
         </div>
+        
+          
         
          
          
