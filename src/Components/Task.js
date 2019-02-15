@@ -47,14 +47,14 @@ if (this.props.taskStatus){
 
 const styles = {
     taskRow: {
-        paddingTop: "50px",
-        paddingBottom: "50px"
+        paddingTop: "40px",
+        paddingBottom: "40px"
     },
     taskDescription: {
         fontFamily: "Monospace",
         fontWeight: "bold",
         color: "brown",
-        fontSize: "20px"
+        fontSize: "25px"
 
     },
 
@@ -62,7 +62,7 @@ const styles = {
         fontFamily: "Monospace",
         fontWeight: "bold",
         color: "brown",
-        fontSize: "20px",
+        fontSize: "25px",
         textDecoration: "line-through"
 
     },

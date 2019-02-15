@@ -3,6 +3,7 @@ import Header from './Components/Header';
 import TaskEntry from './Components/TaskEntry';
 import TaskList from './Components/TaskList';
 import TaskCount from './Components/TaskCounter';
+import TasksService from './service/tasks';
 
 
 
@@ -21,6 +22,12 @@ class App extends Component {
 
 
   }
+
+  async componentDidMount() {
+    const tasks = await TasksService.getTasks();
+    
+    this.setState({tasks: tasks});
+}
 
   addTask(task) {
     let currentListOfTasks = this.state.tasks;
