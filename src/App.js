@@ -25,33 +25,40 @@ class App extends Component {
 
   async componentDidMount() {
     const tasks = await TasksService.getTasks();
-    
-    this.setState({tasks: tasks});
-}
 
-  addTask(task) {
+    this.setState({ tasks: tasks }); ///tasks loaded into database and set into state.
+  }
+
+  async addTask(task) {///have to make sure that the function is declared asyc. addTask is originally triggered from taskEntry
+
+    const response = await TasksService.saveTask(task); ///takes in code from the tasks.js for aaddTask(takes in task object)
+
+    task.taskId = response.insertId; ///Takes the property task.this makes sure that the right id is associated to task added as per database.
+
+    ///the API responds with the taskId. The task gets put into state
+
     let currentListOfTasks = this.state.tasks;
     currentListOfTasks.push(task);
     this.setState({
       tasks: currentListOfTasks
     });
   }
-/// For the code, I will ise the similar format as above.The filter will run through the array of tasks(currentlist of tasks) and to delete/remove the one task. Then set state to allow for the event handler on the button to fire and remove the task.
-/// The delete task already bound. The task id props to be called from tasklist. ! == is used to return the same equal variables.
+  /// For the code, I will ise the similar format as above.The filter will run through the array of tasks(currentlist of tasks) and to delete/remove the one task. Then set state to allow for the event handler on the button to fire and remove the task.
+  /// The delete task already bound. The task id props to be called from tasklist. ! == is used to return the same equal variables.
   deleteTask(taskId) {
     let currentListOfTasks = this.state.tasks;
     let deleteFilter = currentListOfTasks.filter((task) => task.id !== taskId);
-    this.setState({tasks: deleteFilter});
+    this.setState({ tasks: deleteFilter });
   }
 
   /// I will use .filter to work through the array and filter out the task that pass the filter test within the function.I will use.filter.
-removeDone(taskId) {
-  let currentListOfTasks = this.state.tasks;
+  removeDone(taskId) {
+    let currentListOfTasks = this.state.tasks;
     let deleteFilter = currentListOfTasks.filter((task) => task.id === taskId)[0];
-  deleteFilter.completed = true;
-  this.setState({tasks:currentListOfTasks});
-}
-    
+    deleteFilter.completed = true;
+    this.setState({ tasks: currentListOfTasks });
+  }
+
 
   render() {
     return (
@@ -71,14 +78,14 @@ removeDone(taskId) {
         </div>
 
         <div>
-          <TaskList tasks={this.state.tasks} onDeleteTaskHandler ={this.deleteTask}  onDoneTaskHandler ={this.removeDone}/>
+          <TaskList tasks={this.state.tasks} onDeleteTaskHandler={this.deleteTask} onDoneTaskHandler={this.removeDone} />
         </div>
-        
-          
-        
-         
-         
-        
+
+
+
+
+
+
       </div>
 
     );

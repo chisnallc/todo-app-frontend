@@ -28,7 +28,7 @@ if (this.props.taskStatus){
         return (
             <div className="row" style={styles.taskRow} >
                 <div className="col" style={taskStyle}>
-                    {this.props.taskDescription}
+                  {this.props.taskId} - {this.props.taskDescription}
                 </div>
                 <div className="col" >
                     <input type="button" class="btn btn-outline-success" value="Delete" style={styles.buttonStyle}onClick={this.deleteTask} />
@@ -47,8 +47,8 @@ if (this.props.taskStatus){
 
 const styles = {
     taskRow: {
-        paddingTop: "40px",
-        paddingBottom: "40px"
+        paddingTop: "20px",
+        paddingBottom: "20px"
     },
     taskDescription: {
         fontFamily: "Monospace",
