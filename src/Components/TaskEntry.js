@@ -39,7 +39,7 @@ class TaskEntry extends React.Component {
     render() {
         return (
             <div className="row">
-                <div classname="col">
+                <div className="col">
                     <input type="text" value={this.state.taskDescription} onChange={this.onTaskTextFieldUpdated} />
                 </div>
                 <div className="col">

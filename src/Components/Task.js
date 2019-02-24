@@ -47,8 +47,8 @@ if (this.props.taskStatus){
 
 const styles = {
     taskRow: {
-        paddingTop: "20px",
-        paddingBottom: "20px"
+        paddingTop: "10px",
+        paddingBottom: "10px"
     },
     taskDescription: {
         fontFamily: "Monospace",

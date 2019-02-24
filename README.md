@@ -8,6 +8,7 @@ Once added a delete button and a done button will appear.
 When the ingredient has been shopped the done button should be clicked. This will represent the task as completed. If the shopping list has an ingredient added in error, the delete button will remove it from the list.
 
 There is also a counter function which has been incorperated onto the sites page. As the task is added, the counter will increment. The counter will decrement when the ingredient is deleted or completed.
+This has been linked to a backend system with AWS/MySQL the file is called backend todo.
 
 Instructions to load the website are below.
 

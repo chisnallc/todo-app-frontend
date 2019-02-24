@@ -45,11 +45,14 @@ class App extends Component {
   }
   /// For the code, I will ise the similar format as above.The filter will run through the array of tasks(currentlist of tasks) and to delete/remove the one task. Then set state to allow for the event handler on the button to fire and remove the task.
   /// The delete task already bound. The task id props to be called from tasklist. ! == is used to return the same equal variables.
-  deleteTask(taskId) {
+  async deleteTask(taskId) {
+    const response = await TasksService.deleteTask(taskId);
+
     let currentListOfTasks = this.state.tasks;
-    let deleteFilter = currentListOfTasks.filter((task) => task.id !== taskId);
+    let deleteFilter = currentListOfTasks.filter((task) => task.taskId !== taskId);
     this.setState({ tasks: deleteFilter });
   }
+
 
   /// I will use .filter to work through the array and filter out the task that pass the filter test within the function.I will use.filter.
   removeDone(taskId) {
@@ -58,6 +61,7 @@ class App extends Component {
     deleteFilter.completed = true;
     this.setState({ tasks: currentListOfTasks });
   }
+
 
 
   render() {
