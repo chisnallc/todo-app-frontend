@@ -12,8 +12,8 @@ class TaskList extends React.Component {
         return (
             <div>
                 {
-                    this.props.tasks.map((task, i) =>
-                        <Task taskId = {task.taskId} taskDescription={task.taskDescription} key={i}
+                    this.props.tasks.map((task) =>
+                        <Task taskId = {task.taskId} taskDescription={task.taskDescription} key={this.props.taskId}
                             onDeleteTaskHandler={this.props.onDeleteTaskHandler}
                             onDoneTaskHandler={this.props.onDoneTaskHandler}
                             taskStatus={task.completed}
