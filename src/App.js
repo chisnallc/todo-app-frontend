@@ -23,7 +23,7 @@ class App extends Component {
 
   }
 
-  async componentDidMount() {
+  async componentDidMount() {//this is fired after the render
     const tasks = await TasksService.getTasks();
 
     this.setState({ tasks: tasks }); ///tasks loaded into database and set into state.
@@ -57,8 +57,8 @@ class App extends Component {
   /// I will use .filter to work through the array and filter out the task that pass the filter test within the function.I will use.filter.
   removeDone(taskId) {
     let currentListOfTasks = this.state.tasks;
-    let deleteFilter = currentListOfTasks.filter((task) => task.id === taskId)[0];
-    deleteFilter.completed = true;
+    let deleteFilter = currentListOfTasks.filter((task) => taskId=== taskId)[0];
+    deleteFilter.taskCompleted = true;
     this.setState({ tasks: currentListOfTasks });
   }
 

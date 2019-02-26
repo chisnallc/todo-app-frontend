@@ -34,6 +34,7 @@ class TaskEntry extends React.Component {
         const description = event.target.value;
         this.setState({
             taskDescription: description
+            
         });
     }
     render() {
