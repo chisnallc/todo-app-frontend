@@ -9,10 +9,11 @@ class Header extends React.Component {
 
 const styles = {
     header : {
-        color: 'red',
+        color: 'brown',
         textAlign: 'center',
         fontSize: '60px',
-        fontFamily: 'Gautami'
+        fontFamily: 'Gautami',
+        textShadow: '0 0 3px #FF0000, 0 0 5px #0000FF'
 
 
     }

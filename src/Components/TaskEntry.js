@@ -44,7 +44,7 @@ class TaskEntry extends React.Component {
                     <input type="text" value={this.state.taskDescription} onChange={this.onTaskTextFieldUpdated} />
                 </div>
                 <div className="col">
-                    <input type="button" value="Add" onClick={this.onSavedClicked} />
+                    <input type="button"value="Add" onClick={this.onSavedClicked} />
                 </div>
             </div>
 

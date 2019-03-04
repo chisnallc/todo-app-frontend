@@ -24,6 +24,8 @@ const styles = {
 
         font: "40px",
         fontWeight: "bold",
+        fontFamily: 'Gautami'
+        
          
     },
 }

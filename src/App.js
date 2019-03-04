@@ -55,10 +55,13 @@ class App extends Component {
 
 
   /// I will use .filter to work through the array and filter out the task that pass the filter test within the function.I will use.filter.
-  removeDone(taskId) {
+  async removeDone(taskId) {
+
+const response = await TasksService.removeDone(taskId);
+
     let currentListOfTasks = this.state.tasks;
-    let deleteFilter = currentListOfTasks.filter((task) => taskId=== taskId)[0];
-    deleteFilter.taskCompleted = true;
+    let doneFilter = currentListOfTasks.find((task) => task.taskId === taskId);
+    doneFilter.taskCompleted = true;
     this.setState({ tasks: currentListOfTasks });
   }
 
@@ -82,7 +85,8 @@ class App extends Component {
         </div>
 
         <div>
-          <TaskList tasks={this.state.tasks} onDeleteTaskHandler={this.deleteTask} onDoneTaskHandler={this.removeDone} />
+          <TaskList tasks={this.state.tasks} onDeleteTaskHandler={this.deleteTask} 
+          onDoneTaskHandler={this.removeDone} />
         </div>
 
 
