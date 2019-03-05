@@ -16,7 +16,7 @@ class TaskList extends React.Component {
                         <Task taskId = {task.taskId} taskDescription={task.taskDescription} key={this.props.taskId}
                             onDeleteTaskHandler={this.props.onDeleteTaskHandler}
                             onDoneTaskHandler={this.props.onDoneTaskHandler}
-                            taskStatus={task.completed}
+                            taskStatus={task.taskCompleted}
                             
                         />
                     )

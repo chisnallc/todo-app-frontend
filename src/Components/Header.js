@@ -12,8 +12,8 @@ const styles = {
         color: 'brown',
         textAlign: 'center',
         fontSize: '60px',
-        fontFamily: 'Gautami',
-        textShadow: '0 0 3px #FF0000, 0 0 5px #0000FF'
+        fontFamily: 'Gautami'
+        
 
 
     }
